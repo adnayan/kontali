@@ -4,7 +4,9 @@
   "main": "index.js",
   "author": "Nayan Adhikari <adnayan@hotmail.com>",
   "license": "MIT",
-  "test": "env mocha -r ts-node/register 'tests/**/*.ts'",
+  "scripts": {
+    "test": "mocha --require ts-node/register --watch-extensions ts 'tests/**/*.ts'"
+  },
   "devDependencies": {
     "@types/chai": "^4.2.15",
     "@types/mocha": "^8.2.1",
