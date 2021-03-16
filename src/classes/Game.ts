@@ -18,4 +18,9 @@ export class Game {
   set games(games: Array<IGame>) {
     this._games = games;
   }
+
+  public push(game: IGame): Array<IGame> {
+    this._games.push(game);
+    return this._games;
+  }
 }

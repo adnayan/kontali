@@ -22,7 +22,6 @@ export class Scraper {
   }
 
   async scrap(): Promise<Game> {
-    let games: Game = new Game();
     try {
       const res = await this.axios.get(this._url);
       const html = await res.data;
@@ -32,8 +31,8 @@ export class Scraper {
         let game: IGame = {
           date: "",
           round: "",
-          homeTeam: "",
-          awayTeam: "",
+          homeTeamName: "",
+          awayTeamName: "",
           homeGoalHalfTime: 0,
           awayGoalsHalfTime: 0,
           homeGoalFullTime: 0,
@@ -42,8 +41,16 @@ export class Scraper {
         };
         game.date = $(el).find(".nifs_link").first().text();
         game.round = $(el).find("span > div").text();
-        game.homeTeam = $(el).find(".nifs_laglink_nopad").first().text().trim();
-        game.awayTeam = $(el).find(".nifs_laglink_nopad").last().text().trim();
+        game.homeTeamName = $(el)
+          .find(".nifs_laglink_nopad")
+          .first()
+          .text()
+          .trim();
+        game.awayTeamName = $(el)
+          .find(".nifs_laglink_nopad")
+          .last()
+          .text()
+          .trim();
 
         game.homeGoalFullTime = parseInt(
           $(el)
@@ -65,25 +72,24 @@ export class Scraper {
           $(el)
             .find(".res > .nifs_link > span")
             .text()
-            .replace(/^\W+|\W+$/g, "")
+            .replace(/^\W+|\W+$/, "")
             .split("-")[0]
         );
         game.awayGoalsHalfTime = parseInt(
           $(el)
             .find(".res > .nifs_link > span")
             .text()
-            .replace(/^\W+|\W+$/g, "")
+            .replace(/^\W+|\W+$/, "")
             .split("-")[1]
         );
 
         game.status = $(el).find(".avb > span > a > span").text().trim();
-
         // Push game to games
-        console.log(game);
+        this._games.push(game);
       });
     } catch (error) {
       console.error(error);
     }
-    return games;
+    return this._games;
   }
 }

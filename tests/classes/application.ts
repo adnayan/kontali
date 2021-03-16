@@ -7,4 +7,12 @@ describe("Testing class Application.", () => {
   beforeEach(() => {
     app = new Application();
   });
+
+  it("Should return an array of class Team", () => {
+    expect(app.table).to.be.an("array");
+  });
+
+  it("Should return a promise of game.", () => {
+    expect(app.getGameList()).to.be.a("promise");
+  });
 });

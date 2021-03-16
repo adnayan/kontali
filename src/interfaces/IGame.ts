@@ -1,13 +1,13 @@
+import { Team } from "../classes/Team";
+
 export interface IGame {
   date: string;
   round: string;
-  homeTeam: string;
-  awayTeam: string;
+  homeTeamName: string;
+  awayTeamName: string;
   homeGoalHalfTime: number;
   awayGoalsHalfTime: number;
   homeGoalFullTime: number;
   awayGoalFullTime: number;
   status: string;
-  points?: number;
-  goalDifference?: number;
 }
