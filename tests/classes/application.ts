@@ -7,8 +7,4 @@ describe("Testing class Application.", () => {
   beforeEach(() => {
     app = new Application();
   });
-
-  it("Should return the value of fileName, that is an empty string.", () => {
-    expect(app.fileName).to.equal("");
-  });
 });

@@ -5,14 +5,23 @@
   "author": "Nayan Adhikari <adnayan@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "mocha --require ts-node/register --watch-extensions ts 'tests/**/*.ts'"
+    "test": "mocha --require ts-node/register --watch-extensions ts 'tests/**/*.ts'",
+    "start": "ts-node src/index.ts"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/chai": "^4.2.15",
+    "@types/cheerio": "^0.22.27",
+    "@types/csvtojson": "^1.1.5",
     "@types/mocha": "^8.2.1",
     "chai": "^4.3.4",
     "mocha": "^8.3.2",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "csvtojson": "^2.0.10"
   }
 }

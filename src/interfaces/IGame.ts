@@ -1,6 +1,6 @@
 export interface IGame {
   date: string;
-  startTime: string;
+  round: string;
   homeTeam: string;
   awayTeam: string;
   homeGoalHalfTime: number;

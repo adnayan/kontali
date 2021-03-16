@@ -1,10 +1,8 @@
-export class Application {
-  private _fileName: string;
-  constructor() {
-    this._fileName = "";
-  }
+import { Game } from "./Game";
 
-  get fileName(): string {
-    return this._fileName;
+export class Application {
+  private _data: Game;
+  constructor() {
+    this._data = new Game();
   }
 }

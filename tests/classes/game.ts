@@ -1,11 +1,11 @@
 import { expect } from "chai";
 
-import { Data } from "../../src/classes/Data";
+import { Game } from "../../src/classes/Game";
 
 describe("Testing class Data.", () => {
-  let data: Data;
+  let data: Game;
   beforeEach(() => {
-    data = new Data();
+    data = new Game();
   });
 
   it("Should return a value of empty array.", () => {

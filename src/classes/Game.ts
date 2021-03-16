@@ -1,6 +1,6 @@
 import { IGame } from "../interfaces/IGame";
 
-export class Data {
+export class Game {
   private _games: Array<IGame>;
 
   constructor() {
@@ -13,5 +13,9 @@ export class Data {
 
   get games(): Array<IGame> {
     return this._games;
+  }
+
+  set games(games: Array<IGame>) {
+    this._games = games;
   }
 }
