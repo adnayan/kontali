@@ -20,7 +20,15 @@ describe("Testing class Application.", () => {
     expect(app.generateTable()).to.be.an("array");
   });
 
-  it("Should return an array of team.", () => {
+  it("Should return an array of team that is set for display.", () => {
     expect(app.displayTable()).to.be.an("array");
+  });
+
+  it("Should generate and return an array of team for halftime as final result.", () => {
+    expect(app.generateTableHalfTime()).to.be.an("array");
+  });
+
+  it("Should return an array of team sore of halftime for display.", () => {
+    expect(app.displayHalfTable()).to.be.an("array");
   });
 });
