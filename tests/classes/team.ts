@@ -12,7 +12,7 @@ describe("Testing class Team.", () => {
     expect(team.setName("Liverpool")).to.equal("Liverpool");
   });
 
-  it("Should return name of the team.", () => {
+  it("Should return name of the team which is a string.", () => {
     expect(team.name).to.be.a("string");
   });
 
@@ -20,19 +20,31 @@ describe("Testing class Team.", () => {
     expect(team.name).to.equal("Liverpool FC");
   });
 
-  it("Should increase point by 3.", () => {
-    expect(team.setPoint(3)).to.equal(3);
+  it("Should return points of the team which is a number.", () => {
+    expect(team.points).to.be.a("number");
   });
 
-  it("Sholud increase match played by 1.", () => {
-    expect(team.increaseMatchPlayed(1)).to.equal(1);
+  it("Should return points value of 3.", () => {
+    expect(team.increasePoint(3)).to.equal(3);
   });
 
-  it("Should increase goal difference by 1.", () => {
-    expect(team.increaseGoalDifference(1)).to.equal(1);
+  it("Should return matchPlayed of the team which is a number.", () => {
+    expect(team.matchPlayed).to.be.a("number");
+  });
+
+  it("Should return matchPlayed value of 1.", () => {
+    expect(team.increaseMatchPlayed()).to.equal(1);
+  });
+
+  it("Should return goalDifference of the team which is a number.", () => {
+    expect(team.goalDifference).to.be.a("number");
+  });
+
+  it("Should return goalDifference of value 3.", () => {
+    expect(team.changeGoalDifference(3)).to.equal(3);
   });
 
   it("Should decrease goal difference by 2", () => {
-    expect(team.decreaseGoalDifference(2)).to.equal(-2);
+    expect(team.changeGoalDifference(-2)).to.equal(-2);
   });
 });

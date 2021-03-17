@@ -15,4 +15,12 @@ describe("Testing class Application.", () => {
   it("Should return a promise of game.", () => {
     expect(app.getGameList()).to.be.a("promise");
   });
+
+  it("Should generate and return an array of team.", () => {
+    expect(app.generateTable()).to.be.an("array");
+  });
+
+  it("Should return an array of team.", () => {
+    expect(app.displayTable()).to.be.an("array");
+  });
 });
